@@ -5,11 +5,11 @@ setlocal ENABLEDELAYEDEXPANSION
 set HDHROne=12345678
 ::Set to the device ID of your second HDHomeRun Device
 set HDHRTwo=23456789
-::Set to the IP Address of the WeMo connected to your first HDHomeRun Device. Leave blank to disable.
+::Set to the IP Address of the smart outlet connected to your first HDHomeRun Device. Leave blank to disable.
 set WeMoOneIP=192.168.1.200
-::Set to the IP Address of the WeMo connected to your second HDHomeRun Device. Leave blank to disable.
+::Set to the IP Address of the smart outlet connected to your second HDHomeRun Device. Leave blank to disable.
 set WeMoTwoIP=192.168.1.201
-::Set Tasmota=True if your WeMo devices are using the Tasmota firmware
+::Set Tasmota=True if your smart outlets are using the Tasmota firmware. Leave blank if you are using a stock WeMo.
 set Tasmota=True
 :: You should not have to edit anything below this line
 
@@ -49,7 +49,7 @@ for %%a in (%HDHROne%,%HDHRTwo%) do (
 				echo . >> "%~dp0RestartTuners.log"
 			)
 		) else (
-			echo WeMo control disabled, skipping power cycle >> "%~dp0RestartTuners.log"
+			echo Smart outlet control disabled, skipping power cycle >> "%~dp0RestartTuners.log"
 		)
 	) else (
 		echo Found !HDHROnNetwork! %%a on network >> "%~dp0RestartTuners.log"
