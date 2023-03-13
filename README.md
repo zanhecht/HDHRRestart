@@ -6,4 +6,4 @@ If you have an older of flakier [SiliconDust HDHomeRun](https://www.silicondust.
 
 Set the script to run at a regular interval using Windows Schedule tasks. Shortly before the top of the hour tends to work well.
 
-If you are using a WeMo device and are not using the Tasmota firmware, you will need to install both [Cygwin](https://www.cygwin.com/install.html) and [Curl](https://curl.se/windows/). Otherwise, the GNU wget.exe included in this repository is sufficient for controlling Tasmota switches.
+If you are using a WeMo device and are not using the Tasmota firmware, you will need to install both [Cygwin](https://www.cygwin.com/install.html) and [Curl](https://curl.se/windows/). Otherwise, the GNU wget.exe included in this repository is sufficient for controlling Tasmota devices. Your smart outlet will need to be assigned a static IP address by your router for the script to find it.
