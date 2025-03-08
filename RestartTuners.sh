@@ -1,9 +1,11 @@
 #!/bin/bash
 
 # HDHRRestart
+# https://github.com/zanhecht/HDHRRestart
+#
 # HDHomeRun Tuner Restart  
 # Based on scripts by [jgsouthard](https://forums.sagetv.com/forums/member.php?u=2072)
-# at forums.sagetv.com
+# at [forums.sagetv.com](https://forums.sagetv.com/forums/showthread_t_62840.html?t=62840)
 #
 # If you have an older or flakier [SiliconDust HDHomeRun](https://www.silicondust.com/hdhomerun/)
 # tuner, this script will check to see if it is on the network, check to see if it's in
@@ -11,22 +13,18 @@
 # script can also power cycle the HDHomeRun using either a WeMo or a smart
 # outlet/switch running the [Tasmota firmware](https://tasmota.github.io/docs/).
 #
-#Set the script to run at a regular interval using crontab -e.
-#Shortly before the top of the hour tends to work well.
+# Your smart outlet will need to be assigned a static IP address by your router for the
+# script to find it. If you are using a Tasmota device, you can dim the status LEDs by
+# going to http://192.168.1.200/cm?cmnd=Backlog%20LedPwmMode%201%3BLedPwmOff%2031%3BLedPwmOn%2063 
+# (replace 192.168.1.200 with the IP of the device).
 #
 # Before running, install hdhomerun_config by running, from the home directory:
 # sudo apt update && sudo apt install -y git build-essential
 # git clone https://github.com/Silicondust/libhdhomerun.git && cd libhdhomerun && make
 # sudo install -m 755 ~/libhdhomerun/hdhomerun_config /usr/local/bin/
 #
-#If you are using a WeMo device and are not using the Tasmota firmware, you will need
-# to use curl. Otherwise, wget is sufficient for controlling Tasmota devices. Your
-# smart outlet will need to be assigned a static IP address by your router for the
-# script to find it.
-#
-#If you are using a Tasmota device, you can dim the status LEDs by going to
-# http://192.168.1.200/cm?cmnd=Backlog%20LedPwmMode%201%3BLedPwmOff%2031%3BLedPwmOn%2063 
-#(replace 192.168.1.200 with the IP of the device).
+#Set the script to run at a regular interval using crontab -e.
+#Shortly before the top of the hour tends to work well.
 
 # Set HDHomeRun Device IDs
 HDHR_ONE="10452937"
